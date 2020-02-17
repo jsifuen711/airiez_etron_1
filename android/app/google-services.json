@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "950362693354",
+    "firebase_url": "https://airiez-etron.firebaseio.com",
+    "project_id": "airiez-etron",
+    "storage_bucket": "airiez-etron.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:950362693354:android:a1495f0d60b2fd88fa8193",
+        "android_client_info": {
+          "package_name": "com.example.airiez_etron_1"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "950362693354-c2n14g0rf47tog53pv7tv2m46vnj17l3.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.airiez_etron_1",
+            "certificate_hash": "b588d7515ed78afa3765f05c0f6f95d3a846ffe8"
+          }
+        },
+        {
+          "client_id": "950362693354-4jdve65vefacf8bdjpoj09fj32v6val0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCstSD9EBMklmd44-sT2suASJ4IT9_hEJk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "950362693354-4jdve65vefacf8bdjpoj09fj32v6val0.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
