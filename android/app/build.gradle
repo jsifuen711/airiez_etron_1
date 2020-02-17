@@ -34,8 +34,9 @@ android {
     defaultConfig {
         // TODO: Specify your own unique Application ID (https://developer.android.com/studio/build/application-id.html).
 
-//        changed name for Firebase
-        applicationId "com.example.airiez_etron_1"
+//        changed name for Firebase from package name
+//        com.example.airiez_etron_1
+        applicationId "airiez-etron"
         minSdkVersion 16
         targetSdkVersion 28
         versionCode flutterVersionCode.toInteger()
