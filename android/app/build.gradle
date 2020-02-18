@@ -36,7 +36,8 @@ android {
 
 //        changed name for Firebase from package name
 //        com.example.airiez_etron_1
-        applicationId "airiez-etron"
+//        if the named is changed here the package won't be found
+        applicationId "com.example.airiez_etron_1"
         minSdkVersion 16
         targetSdkVersion 28
         versionCode flutterVersionCode.toInteger()
