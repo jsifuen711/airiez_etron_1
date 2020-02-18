@@ -24,8 +24,8 @@ class GettingStartedScreen extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: <Widget>[
                     Container(
-                      width: 250.0,
-                      height: 250.0,
+                      width: 220.0,
+                      height: 220.0,
                       decoration: BoxDecoration(
                         shape: BoxShape.circle,
                         image: DecorationImage(
@@ -38,9 +38,9 @@ class GettingStartedScreen extends StatelessWidget {
                       height: 40.0,
                     ),
                     Text(
-                      'This is our Title',
+                      'Airiez Etron',
                       style: TextStyle(
-                        fontSize: 20.0,
+                        fontSize: 35.0,
                         color: Theme.of(context).primaryColor,
                       ),
                     ),
