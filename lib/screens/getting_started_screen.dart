@@ -1,9 +1,9 @@
 import 'dart:async';
-
 import 'package:flutter/material.dart';
 
 import '../model/slide.dart';
 import '../widgets/slide_item.dart';
+import '../widgets/slide_dots.dart';
 
 // added a stateless widget and body & child with center screen
 // converted widget to stateful
@@ -72,14 +72,43 @@ class _GettingStartedScreenState extends State<GettingStartedScreen> {
 //        this Column was changed/wrapped with padding for entire page view
             children: <Widget>[
               Expanded(
-                child: PageView.builder(
+// TO IMPLEMENT DOTS WE WRAP THE Pageview.builder with a widget
+// THE WIDGET WE WILL USE IS A STACK WIDGET
+//              steps:
+                // 1. wrap with widget
+                // 2. Now call the widget Stack
+                child: Stack(
+                  alignment: AlignmentDirectional.bottomCenter,
+                  children: <Widget>[
+                    PageView.builder(
 // THIS IS WHERE THE PAGE CONTROLLER GOES & scroll direction
-                  scrollDirection: Axis.horizontal,
-                  controller: _pageController,
-                  // Continuing prom line 52 onPagechanged we add the controller init state here
-                  onPageChanged: _onPageChanged,
-                  itemCount: slideList.length,
-                  itemBuilder: (ctx, i) => SlideItem(i),
+                      scrollDirection: Axis.horizontal,
+                      controller: _pageController,
+                      // Continuing prom line 52 onPagechanged we add the controller init state here
+                      onPageChanged: _onPageChanged,
+                      itemCount: slideList.length,
+                      itemBuilder: (ctx, i) => SlideItem(i),
+                    ),
+                    Stack(
+                      alignment: AlignmentDirectional.topStart,
+                      children: <Widget>[
+                        Container(
+                          margin: const EdgeInsets.only(bottom: 35),
+                          child: Row(
+                            mainAxisSize: MainAxisSize.min,
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: <Widget>[
+                              for (int i = 0; i < slideList.length; i++)
+                                if (i == _currentPage)
+                                  SlideDots(true)
+                                else
+                                  SlideDots(false)
+                            ],
+                          ),
+                        )
+                      ],
+                    )
+                  ],
                 ),
               ),
 //     This adds space between the rows of widgets added
