@@ -1,8 +1,60 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
+
+import '../model/slide.dart';
 import '../widgets/slide_item.dart';
 
 // added a stateless widget and body & child with center screen
-class GettingStartedScreen extends StatelessWidget {
+// converted widget to stateful
+class GettingStartedScreen extends StatefulWidget {
+//  this is where our controller goes
+  @override
+  _GettingStartedScreenState createState() => _GettingStartedScreenState();
+}
+
+class _GettingStartedScreenState extends State<GettingStartedScreen> {
+//  AFTER CONVERTING THE WIDGET TO STATEFUL WE ADD A INT STATE
+  int _currentPage = 0;
+  final PageController _pageController = PageController(initialPage: 0);
+
+// dispose of the page controller as we are adding an automatic counter
+//  for our slider page
+
+//  now provide an init state for the automatic slider transition
+//  for this we need an import from dart call Async
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    Timer.periodic(Duration(seconds: 5), (Timer timer) {
+      if (_currentPage < 2) {
+        _currentPage++;
+      } else {
+        _currentPage = 0;
+      }
+
+//      now for the page controller we provided an animated page transition
+      _pageController.animateToPage(_currentPage,
+          duration: Duration(milliseconds: 300), curve: Curves.easeIn);
+    });
+  }
+
+  @override
+  void dispose() {
+    super.dispose();
+    _pageController.dispose();
+  }
+
+//  after the timer init state we created this second function
+//  this is the on page change function
+  _onPageChanged(int index) {
+    setState(() {
+      _currentPage = index;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -20,7 +72,15 @@ class GettingStartedScreen extends StatelessWidget {
 //        this Column was changed/wrapped with padding for entire page view
             children: <Widget>[
               Expanded(
-                child: SlideItem(),
+                child: PageView.builder(
+// THIS IS WHERE THE PAGE CONTROLLER GOES & scroll direction
+                  scrollDirection: Axis.horizontal,
+                  controller: _pageController,
+                  // Continuing prom line 52 onPagechanged we add the controller init state here
+                  onPageChanged: _onPageChanged,
+                  itemCount: slideList.length,
+                  itemBuilder: (ctx, i) => SlideItem(i),
+                ),
               ),
 //     This adds space between the rows of widgets added
               SizedBox(
