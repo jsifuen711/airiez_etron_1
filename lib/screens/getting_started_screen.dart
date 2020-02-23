@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import '../model/slide.dart';
 import '../widgets/slide_item.dart';
 import '../widgets/slide_dots.dart';
+import '../screens/login_screen.dart';
 
 // added a stateless widget and body & child with center screen
 // converted widget to stateful
@@ -150,7 +151,14 @@ class _GettingStartedScreenState extends State<GettingStartedScreen> {
                           'Login',
                           style: TextStyle(fontSize: 18),
                         ),
-                        onPressed: () {},
+                        // activate this button by implementing
+                        // the code onPressed (){inside here}
+// THEN IMPORT PACKAGE TO BE ABLE TO ROUTE TO THE LOGIN SCREEN
+//          import '../screens/login_screen.dart';
+                        onPressed: () {
+                          Navigator.of(context)
+                              .pushNamed(LoginScreen.routeName);
+                        },
                       ),
                     ],
                   ),

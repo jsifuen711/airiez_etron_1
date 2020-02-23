@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 // my added imports
 import './screens/getting_started_screen.dart';
+import './screens/login_screen.dart';
 
 void main() => runApp(MyApp());
 
@@ -18,6 +19,14 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
       ),
       home: GettingStartedScreen(),
+//
+//    THIS IS WHERE static const routeName = '/login'; IS ASSOCIATED
+//    TO BY USING THE FOLLOWING CODE routes:{},
+//    NOW FOR THIS WE NEED TO IMPORT THE PACKAGE TO ROUTE TO
+//
+      routes: {
+        LoginScreen.routeName: (ctx) => LoginScreen(),
+      },
     );
   }
 }

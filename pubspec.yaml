@@ -48,6 +48,7 @@ flutter:
       - assets/images/logo.PNG
       - assets/images/partner.PNG
       - assets/images/octo.png
+      - assets/images/g_logo.png
   #   - images/a_dot_burr.jpeg
   #   - images/a_dot_ham.jpeg
 

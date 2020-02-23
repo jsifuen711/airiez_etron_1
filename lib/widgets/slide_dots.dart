@@ -6,7 +6,7 @@ import 'package:flutter/material.dart';
 
 // 1. THIS PAGE STARTS WITH A STATELESS WIDGET
 class SlideDots extends StatelessWidget {
-  // 3.1 we need to add dynamic height and width funsction here
+  // 3.1 we need to add dynamic height and width function here
   // for this we add bool isActive
   bool isActive;
   // 3.2 SlideDots are added here
