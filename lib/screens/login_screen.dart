@@ -1,7 +1,9 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
+
 class LoginScreen extends StatelessWidget {
-  static const routeName = '/login';
+  static const routeName = '/signup';
 
   @override
   Widget build(BuildContext context) {
@@ -36,7 +38,7 @@ class LoginScreen extends StatelessWidget {
                       style: TextStyle(
                           fontSize: 80.0,
                           fontWeight: FontWeight.bold,
-                          color: Colors.green),
+                          color: Colors.blue),
                     ),
                   )
                 ],
@@ -54,7 +56,7 @@ class LoginScreen extends StatelessWidget {
                             fontWeight: FontWeight.bold,
                             color: Colors.grey),
                         focusedBorder: UnderlineInputBorder(
-                          borderSide: BorderSide(color: Colors.green),
+                          borderSide: BorderSide(color: Colors.blue),
                         )),
                   ),
                   SizedBox(height: 5.0),
@@ -66,7 +68,7 @@ class LoginScreen extends StatelessWidget {
                             fontWeight: FontWeight.bold,
                             color: Colors.grey),
                         focusedBorder: UnderlineInputBorder(
-                          borderSide: BorderSide(color: Colors.green),
+                          borderSide: BorderSide(color: Colors.blue),
                         )),
                     obscureText: true,
                   ),
@@ -78,7 +80,7 @@ class LoginScreen extends StatelessWidget {
                       child: Text(
                         'Forgot Password',
                         style: TextStyle(
-                            color: Colors.green,
+                            color: Colors.blue,
                             fontWeight: FontWeight.bold,
                             fontFamily: 'Monserrat',
                             decoration: TextDecoration.underline),
@@ -90,8 +92,8 @@ class LoginScreen extends StatelessWidget {
                     height: 40.0,
                     child: Material(
                       borderRadius: BorderRadius.circular(20.0),
-                      shadowColor: Colors.greenAccent,
-                      color: Colors.green,
+                      shadowColor: Colors.blueAccent,
+                      color: Colors.blue,
                       elevation: 7.0,
                       child: GestureDetector(
                         onTap: () {},
@@ -106,10 +108,66 @@ class LoginScreen extends StatelessWidget {
                         ),
                       ),
                     ),
+                  ),
+                  SizedBox(height: 20.0),
+                  Container(
+                    height: 40.0,
+                    color: Colors.transparent,
+                    child: Container(
+                      decoration: BoxDecoration(
+                          border: Border.all(
+                              color: Colors.black,
+                              style: BorderStyle.solid,
+                              width: 1.0),
+                          color: Colors.transparent,
+                          borderRadius: BorderRadius.circular(20.0)),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: <Widget>[
+                          Center(
+                            child: ImageIcon(
+                                AssetImage('assets/images/g_logo.png')),
+                          ),
+                          SizedBox(
+                            width: 12.5,
+                          ),
+                          Center(
+                            child: Text('Log in with Google',
+                                style: TextStyle(
+                                    fontWeight: FontWeight.bold,
+                                    fontFamily: 'Monserrat')),
+                          )
+                        ],
+                      ),
+                    ),
                   )
                 ],
               ),
             ),
+            SizedBox(height: 15.0),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: <Widget>[
+                Text(
+                  'New to Airiez ?',
+                  style: TextStyle(fontFamily: 'Monserrat'),
+                ),
+                SizedBox(width: 5.0),
+                InkWell(
+                  onTap: () {
+                    Navigator.of(context).pushNamed('/signup');
+                  },
+                  child: Text(
+                    'Register',
+                    style: TextStyle(
+                        color: Colors.blue,
+                        fontFamily: 'Monserrat',
+                        fontWeight: FontWeight.bold,
+                        decoration: TextDecoration.underline),
+                  ),
+                )
+              ],
+            )
           ],
         ));
   }

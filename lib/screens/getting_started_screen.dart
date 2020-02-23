@@ -121,21 +121,45 @@ class _GettingStartedScreenState extends State<GettingStartedScreen> {
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: <Widget>[
 //              change this button to make a better UI
-                  FlatButton(
-                    child: Text(
-                      'Getting Started',
-                      style: TextStyle(
-                        fontSize: 18,
+                  SizedBox(height: 40.0),
+                  Container(
+                    height: 40.0,
+                    child: Material(
+                      borderRadius: BorderRadius.circular(20.0),
+                      shadowColor: Colors.blueAccent,
+                      color: Colors.blue,
+                      elevation: 7.0,
+                      child: GestureDetector(
+                        onTap: () {},
+                        child: Center(
+                          child: Text(
+                            'GETTING STARTED',
+                            style: TextStyle(
+                                color: Colors.white,
+                                fontWeight: FontWeight.bold,
+                                fontSize: 18.0,
+                                fontFamily: 'Monserrat'),
+                          ),
+                        ),
                       ),
                     ),
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(5),
-                    ),
-                    padding: const EdgeInsets.all(15),
-                    color: Theme.of(context).primaryColor,
-                    textColor: Colors.white,
-                    onPressed: () {},
                   ),
+// OLD CODE SUCKS WITH THAT BOXED BUTTON SO REPLACED WITH CIRCULAR BUTTONS
+//                  FlatButton(
+//                    child: Text(
+//                      'Getting Started',
+//                      style: TextStyle(
+//                        fontSize: 18,
+//                      ),
+//                    ),
+//                    shape: RoundedRectangleBorder(
+//                      borderRadius: BorderRadius.circular(5),
+//                    ),
+//                    padding: const EdgeInsets.all(15),
+//                    color: Theme.of(context).primaryColor,
+//                    textColor: Colors.white,
+//                    onPressed: () {},
+//                  ),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: <Widget>[
