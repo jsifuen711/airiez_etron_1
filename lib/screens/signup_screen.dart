@@ -1,8 +1,7 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-class LoginScreen extends StatelessWidget {
-  static const routeName = '/login';
+class SignupScreen extends StatelessWidget {
+  static const routeName = '/signup';
 
   @override
   Widget build(BuildContext context) {
@@ -17,7 +16,7 @@ class LoginScreen extends StatelessWidget {
                   Container(
                     padding: EdgeInsets.fromLTRB(15.0, 100.0, 0.0, 0.0),
                     child: Text(
-                      'Welcome To',
+                      'Sign',
                       style: TextStyle(
                           fontSize: 80.0, fontWeight: FontWeight.bold),
                     ),
@@ -25,13 +24,13 @@ class LoginScreen extends StatelessWidget {
                   Container(
                     padding: EdgeInsets.fromLTRB(15.0, 175.0, 0.0, 0.0),
                     child: Text(
-                      'Airiez',
+                      'Up',
                       style: TextStyle(
                           fontSize: 80.0, fontWeight: FontWeight.bold),
                     ),
                   ),
                   Container(
-                    padding: EdgeInsets.fromLTRB(225.0, 175.0, 0.0, 0.0),
+                    padding: EdgeInsets.fromLTRB(110.0, 175.0, 0.0, 0.0),
                     child: Text(
                       '.',
                       style: TextStyle(
@@ -49,7 +48,29 @@ class LoginScreen extends StatelessWidget {
                 children: <Widget>[
                   TextField(
                     decoration: InputDecoration(
-                        labelText: 'EMAIL',
+                        labelText: 'Email Address',
+                        labelStyle: TextStyle(
+                            fontFamily: 'Monserrat',
+                            fontWeight: FontWeight.bold,
+                            color: Colors.grey),
+                        focusedBorder: UnderlineInputBorder(
+                          borderSide: BorderSide(color: Colors.blue),
+                        )),
+                  ),
+                  TextField(
+                    decoration: InputDecoration(
+                        labelText: 'Username',
+                        labelStyle: TextStyle(
+                            fontFamily: 'Monserrat',
+                            fontWeight: FontWeight.bold,
+                            color: Colors.grey),
+                        focusedBorder: UnderlineInputBorder(
+                          borderSide: BorderSide(color: Colors.blue),
+                        )),
+                  ),
+                  TextField(
+                    decoration: InputDecoration(
+                        labelText: 'Password',
                         labelStyle: TextStyle(
                             fontFamily: 'Monserrat',
                             fontWeight: FontWeight.bold,
@@ -61,7 +82,7 @@ class LoginScreen extends StatelessWidget {
                   SizedBox(height: 5.0),
                   TextField(
                     decoration: InputDecoration(
-                        labelText: 'PASSWORD',
+                        labelText: 'Confirm Password',
                         labelStyle: TextStyle(
                             fontFamily: 'Monserrat',
                             fontWeight: FontWeight.bold,
@@ -70,21 +91,6 @@ class LoginScreen extends StatelessWidget {
                           borderSide: BorderSide(color: Colors.blue),
                         )),
                     obscureText: true,
-                  ),
-                  SizedBox(height: 5.0),
-                  Container(
-                    alignment: Alignment(1.0, 0.0),
-                    padding: EdgeInsets.only(top: 15.0, left: 20.0),
-                    child: InkWell(
-                      child: Text(
-                        'Forgot Password',
-                        style: TextStyle(
-                            color: Colors.blue,
-                            fontWeight: FontWeight.bold,
-                            fontFamily: 'Monserrat',
-                            decoration: TextDecoration.underline),
-                      ),
-                    ),
                   ),
                   SizedBox(height: 40.0),
                   Container(
@@ -143,28 +149,6 @@ class LoginScreen extends StatelessWidget {
                 ],
               ),
             ),
-            SizedBox(height: 15.0),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: <Widget>[
-                Text(
-                  'New to Airiez ?',
-                  style: TextStyle(fontFamily: 'Monserrat'),
-                ),
-                SizedBox(width: 5.0),
-                InkWell(
-                  onTap: () {},
-                  child: Text(
-                    'Register',
-                    style: TextStyle(
-                        color: Colors.blue,
-                        fontFamily: 'Monserrat',
-                        fontWeight: FontWeight.bold,
-                        decoration: TextDecoration.underline),
-                  ),
-                )
-              ],
-            )
           ],
         ));
   }

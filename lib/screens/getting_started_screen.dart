@@ -5,6 +5,7 @@ import '../model/slide.dart';
 import '../widgets/slide_item.dart';
 import '../widgets/slide_dots.dart';
 import '../screens/login_screen.dart';
+import '../screens/signup_screen.dart';
 
 // added a stateless widget and body & child with center screen
 // converted widget to stateful
@@ -130,7 +131,11 @@ class _GettingStartedScreenState extends State<GettingStartedScreen> {
                       color: Colors.blue,
                       elevation: 7.0,
                       child: GestureDetector(
-                        onTap: () {},
+                        onTap: () {
+//  THIS CODE IS FOR ROUTING, DON'T FORGET TO IMPORT THE PATHWAY
+                          Navigator.of(context)
+                              .pushNamed(SignupScreen.routeName);
+                        },
                         child: Center(
                           child: Text(
                             'GETTING STARTED',

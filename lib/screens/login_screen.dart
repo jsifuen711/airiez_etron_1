@@ -1,9 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-
 class LoginScreen extends StatelessWidget {
-  static const routeName = '/signup';
+  static const routeName = '/login';
 
   @override
   Widget build(BuildContext context) {
@@ -154,9 +153,7 @@ class LoginScreen extends StatelessWidget {
                 ),
                 SizedBox(width: 5.0),
                 InkWell(
-                  onTap: () {
-                    Navigator.of(context).pushNamed('/signup');
-                  },
+                  onTap: () {},
                   child: Text(
                     'Register',
                     style: TextStyle(
